@@ -2,19 +2,16 @@ import { Space, Skeleton } from "antd"
 import { css } from "@emotion/react";
 import { lazy, Suspense } from 'react';
 import type { IPreviewMovie } from "src/shared/models"
-// import { MoviePreviewCard } from "src/widgets/movie-preview-card";
 
 const MoviePreviewCard = lazy(() => import('src/widgets/movie-preview-card'))
 
 interface IMovieCardsListProps {
   moviesList: IPreviewMovie[];
-  showWideCards?: boolean;
   showIncreasedCards?: boolean;
 }
 
 export const MovieCardsList: React.FC<IMovieCardsListProps> = ({
   moviesList,
-  showWideCards = false,
   showIncreasedCards = true
 }) => {
   return (
@@ -23,10 +20,13 @@ export const MovieCardsList: React.FC<IMovieCardsListProps> = ({
         direction="vertical"
         size={16}
         css={css`
-          width: ${showWideCards ? '100%' : '70%'};
+          width: 100%;
       `}>
         {moviesList && moviesList.map((movie: IPreviewMovie) => (
-          <Suspense fallback={<Skeleton active />} key={movie.id}>
+          <Suspense
+            key={movie.id}
+            fallback={<Skeleton active />}
+          >
             <MoviePreviewCard
               movieInfo={movie}
               showIncreasedCard={showIncreasedCards}

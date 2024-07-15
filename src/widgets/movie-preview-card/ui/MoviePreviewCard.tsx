@@ -5,6 +5,7 @@ import { GenresList } from './GenresList';
 import { KpRating } from './KpRating';
 import { MoviePosterImage } from './MoviePosterImage';
 import { YearAndCountriesList } from './YearAndCountriesList';
+import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography
 
@@ -14,10 +15,10 @@ const cardButtonStyle = css`
   border: none;
   padding: 16px;
   border-radius: 8px;
-  background-color: #2c2c2c;
+  background-color: #1a1a1a;
   &:hover{
     cursor: pointer;
-    background-color: #333333;
+    background-color: #202020;
   }
 `
 
@@ -32,10 +33,13 @@ export const MoviePreviewCard: React.FC<IMoviePreviewCardProps> = ({
   movieInfo,
   showIncreasedCard = true
 }) => {
+
+  const navigate = useNavigate();
+
   return (
     <button
       className={className}
-      onClick={() => console.log('movie')}
+      onClick={() => navigate(`/about/${movieInfo.id}`)}
       css={cardButtonStyle}>
       <Flex>
         <MoviePosterImage

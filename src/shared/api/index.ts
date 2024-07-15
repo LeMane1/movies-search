@@ -1,2 +1,2 @@
 export { api } from './api'
-export { useLazyGetMoviesQuery } from './api'
+export { useLazyGetMoviesQuery, useLazyGetMovieByTitleIdQuery } from './api'

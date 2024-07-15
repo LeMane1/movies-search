@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { IMoviesSearchResponse } from '../models/types'
+import type { IMoviesSearchResponse, IMovie } from '../models/types'
 
 export const api = createApi({
   reducerPath: 'api',
@@ -11,7 +11,6 @@ export const api = createApi({
       return headers
     },
   }),
-  tagTypes: ['Movies'],
   endpoints: (builder) => ({
     getMovies: builder.query<IMoviesSearchResponse, string>({
       query: (query) => ({
@@ -23,9 +22,14 @@ export const api = createApi({
           query
         }
       }),
-      providesTags: ['Movies'],
     }),
+    getMovieByTitleId: builder.query<IMovie, number>({
+      query: (query) => ({
+        url: `/v1.4/movie/${query}`,
+        method: 'GET'
+      })
+    })
   }),
 })
 
-export const { useLazyGetMoviesQuery } = api
+export const { useLazyGetMoviesQuery, useLazyGetMovieByTitleIdQuery } = api

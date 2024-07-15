@@ -1,19 +1,44 @@
 import { Grid } from "antd"
+import type { IContainerParameters } from "../models/types";
+
 const { useBreakpoint } = Grid;
 
-export const useContainerWidth = () => {
+export const useContainerWidth = (): IContainerParameters => {
   const { xxl, xl, lg, md, sm, xs } = useBreakpoint();
   if (xxl) {
-    return '1200px'
+    return {
+      breakpoint: 'xxl',
+      width: '1200px'
+    }
   } else if (xl) {
-    return '1200px'
+    return {
+      breakpoint: 'xl',
+      width: '1200px'
+    }
   } else if (lg) {
-    return '992px'
+    return {
+      breakpoint: 'lg',
+      width: '992px'
+    }
   } else if (md) {
-    return '768px'
+    return {
+      breakpoint: 'md',
+      width: '768px'
+    }
   } else if (sm) {
-    return '576px'
+    return {
+      breakpoint: 'sm',
+      width: '576px'
+    }
   } else if (xs) {
-    return '100%'
+    return {
+      breakpoint: 'xs',
+      width: '100%'
+    }
+  } else {
+    return {
+      breakpoint: 'none',
+      width: '100%'
+    }
   }
 }

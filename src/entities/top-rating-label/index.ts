@@ -1,0 +1,1 @@
+export { TopRatingLabel } from './ui/TopRatingLabel'

@@ -1,1 +1,1 @@
-export type { IPreviewMovie, Country } from './types'
+export type { IPreviewMovie, Country, IMovie, Breakpoints, Watchability, Item } from './types'

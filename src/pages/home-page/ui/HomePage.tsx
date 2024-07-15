@@ -1,32 +1,38 @@
-import { Input, Typography, Flex, Grid, Empty } from "antd";
+import { Input, Typography, Flex, Empty, Grid } from "antd";
 import { useContainerWidth } from "src/shared/lib";
 import { css } from "@emotion/react";
 import MainImage from '../assets/main-image.png'
 import { useLazyGetMoviesQuery } from "src/shared/api";
-// import { test } from './test'
+import { test } from './test'
 import { MovieCardsList } from "./MovieCardsList";
 
-const { useBreakpoint } = Grid;
 const { Title } = Typography
 const { Search } = Input;
+const { useBreakpoint } = Grid
+
+const test1 = css`
+  width: 20px;
+  height:30px;
+`
 
 export const HomePage: React.FC = () => {
-  const containerWidth = useContainerWidth()
-  const { md, sm } = useBreakpoint()
+  const { width } = useContainerWidth()
   const [refetch, { data, isLoading }] = useLazyGetMoviesQuery()
+  const { sm, lg } = useBreakpoint()
+
   return (
     <div css={css`
-      width: ${containerWidth};
+      width: ${width};
       margin: 0 auto;
       padding: 12px;
     `}>
       <Flex
         align="center"
         justify="center"
-        wrap
+        vertical
         css={css`
-          flex-direction: row-reverse;
-          margin-bottom: 24px;
+          width: ${lg ? '70%' : '100%'};
+          margin: 0 auto;
       `}>
         <img
           src={MainImage}
@@ -36,26 +42,31 @@ export const HomePage: React.FC = () => {
             height: ${sm ? '400px' : '280px'};
             object-fit: cover;
         `} />
-        <div>
-          <Title
-            level={sm ? 1 : 3}
-            css={css`
-              margin-bottom: 24px !important;
-              line-height: 1 !important;
-          `}>Поиск любимых фильмов и сериалов</Title>
-          <Search
-            size="large"
-            onSearch={(value) => refetch(value)}
-            loading={isLoading}
-          />
-        </div>
-      </Flex>
 
-      {data && data?.docs ? <MovieCardsList
-        moviesList={data?.docs}
-        showWideCards={!md}
-        showIncreasedCards={sm}
-      /> : <Empty />}
-    </div>
+        <Title
+          level={sm ? 1 : 3}
+          css={css`
+            margin-bottom: 24px !important;
+            line-height: 1 !important;
+        `}>
+          Поиск любимых фильмов и сериалов
+        </Title>
+
+        <Search
+          size="large"
+          onSearch={(value) => refetch(value)}
+          loading={isLoading}
+          css={css`
+            margin-bottom: 24px;
+          `}
+        />
+
+        {data && data?.docs ?
+          <MovieCardsList
+            moviesList={data?.docs}
+            showIncreasedCards={sm}
+          /> : <Empty />}
+      </Flex >
+    </div >
   )
 };

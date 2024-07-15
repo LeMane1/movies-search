@@ -1,6 +1,6 @@
 import { Space, Typography } from "antd";
 import { css } from "@emotion/react";
-import { CountryItem } from "./CountryItem";
+import { CountryItem } from "src/entities/country-item";
 import type { Country } from "src/shared/models";
 
 const { Title } = Typography
@@ -50,7 +50,7 @@ export const YearAndCountriesList: React.FC<IYearAndCountriesListProps> = ({
           size={[6, 2]}
         >
           {countries && countries.map((country: Country) => (
-            <CountryItem country={country} />
+            <CountryItem country={country} key={country.name} />
           ))}
         </Space>
       </Space>

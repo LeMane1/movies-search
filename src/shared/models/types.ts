@@ -1,9 +1,96 @@
+export type Breakpoints = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'none'
+
+export interface IContainerParameters {
+  breakpoint: Breakpoints;
+  width: string;
+}
+
 export interface IMoviesSearchResponse {
   docs: IPreviewMovie[],
   total: number;
   limit: number;
   page: number;
   pages: number;
+}
+
+export interface IMovie {
+  id: number
+  externalId: ExternalId
+  name: string
+  alternativeName: string
+  enName: any
+  names: Name[]
+  type: string
+  typeNumber: number
+  year: number
+  description: string
+  shortDescription: string
+  slogan: string
+  status: any
+  rating: Rating
+  votes: Votes
+  movieLength: number
+  totalSeriesLength: any
+  seriesLength: any
+  ratingMpaa: string
+  ageRating: number
+  poster: Poster
+  backdrop: Backdrop
+  genres: Genre[]
+  countries: Country[]
+  persons: Person[]
+  budget: Budget
+  premiere: Premiere
+  watchability: Watchability
+  top10: any
+  top250: number
+  isSeries: boolean
+  audience: Audience[]
+  ticketsOnSale: boolean
+  lists: string[]
+  networks: any
+  createdAt: string
+  updatedAt: string
+}
+
+export interface Premiere {
+  country: any
+  digital: any
+  cinema: any
+}
+
+export interface Watchability {
+  items: Item[]
+}
+
+export interface Item {
+  name: string
+  logo: Logo
+  url: string
+}
+
+export interface Logo {
+  url: string
+}
+
+export interface Audience {
+  count: number
+  country: string
+}
+
+export interface Person {
+  id: number
+  photo: string
+  name?: string
+  enName?: string
+  description?: string
+  profession: string
+  enProfession: string
+}
+
+export interface Budget {
+  currency: string
+  value: number
 }
 
 export interface IPreviewMovie {

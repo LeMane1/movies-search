@@ -1,0 +1,1 @@
+export { MovieIntroInfo } from './ui/MovieIntroInfo'
