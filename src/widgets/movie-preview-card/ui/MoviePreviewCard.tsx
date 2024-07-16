@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import type { IPreviewMovie } from 'src/shared/models';
 import { Flex, Typography } from 'antd';
 import { GenresList } from './GenresList';
-import { KpRating } from './KpRating';
+import { KpRating } from 'src/entities/kp-rating';
 import { MoviePosterImage } from './MoviePosterImage';
 import { YearAndCountriesList } from './YearAndCountriesList';
 import { useNavigate } from "react-router-dom";

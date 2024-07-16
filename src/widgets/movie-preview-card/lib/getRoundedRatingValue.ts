@@ -1,1 +1,0 @@
-export const getRoundedRatingValue = (ratingValue: number | null): string => ratingValue ? ratingValue?.toFixed(1) : ''

@@ -8,6 +8,7 @@ import { GenresList } from './GenresList';
 import { DurationTime } from './DurationTime';
 import { Country, Genre } from "src/shared/models/types";
 import { CountryList } from "./CountryList";
+import { KpRating } from "src/entities/kp-rating";
 
 const { useBreakpoint } = Grid
 const { Title } = Typography
@@ -31,7 +32,8 @@ interface IMovieIntroInfoProps {
   duration?: number;
   ageRating?: number;
   genres?: Genre[];
-  countries?: Country[]
+  countries?: Country[];
+  ratingValue?: number;
 }
 
 export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
@@ -42,7 +44,8 @@ export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
   duration,
   ageRating,
   genres,
-  countries
+  countries,
+  ratingValue
 }) => {
 
   const { breakpoint, width } = useContainerWidth()
@@ -81,8 +84,10 @@ export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
             wrap
             align='center'
             css={css`
-              margin-bottom: 12px;
+              margin-bottom: 8px;
           `}>
+            <KpRating ratingValue={ratingValue} />
+
             {top250 && <TopRatingLabel place={top250} />}
 
             <Title level={5} css={css`
@@ -93,13 +98,17 @@ export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
 
             <DurationTime duration={duration} />
 
-            <CountryList countries={countries} />
-
             <Title level={5} css={css`
               opacity: 70%;
             `}>
               {`${ageRating}+`}
             </Title>
+          </Space>
+
+          <Space wrap css={css`
+            margin-bottom: 12px;
+          `}>
+            <CountryList countries={countries} />
           </Space>
 
           <GenresList genres={genres} />

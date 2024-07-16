@@ -1,4 +1,4 @@
-export const getRatingColor = (ratingValue: number | null): string => {
+export const getRatingColor = (ratingValue: number | null | undefined): string => {
   if (ratingValue) {
     if (ratingValue >= 8) {
       return '#2acf4b'

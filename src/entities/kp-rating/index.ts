@@ -1,0 +1,1 @@
+export { KpRating } from './ui/KpRating'

@@ -31,8 +31,8 @@ export const WatchResource: React.FC<IWatchResourceProps> = ({ resource, classNa
           `} />
 
           <Title css={css`
-            font-size: 12px !important;
-            font-weight: 500 !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
             word-break: break-word !important;
           `}>
             {resource?.name}

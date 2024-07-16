@@ -6,7 +6,7 @@ import { getRoundedRatingValue } from "../lib/getRoundedRatingValue";
 const { Title } = Typography
 
 interface IKpRatingProps {
-  ratingValue: number | null;
+  ratingValue?: number | null;
   className?: string
 }
 

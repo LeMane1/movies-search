@@ -1,5 +1,6 @@
 export const getDuration = (duration: number): string => {
-  const hours = Math.round(duration / 60)
-  const minutes = duration - hours * 60
-  return `${hours ? hours + 'ч ' : ''}${minutes ? minutes + 'мин' : ''}`
+  const hours = duration / 60
+  const hoursInt = Math.floor(hours)
+  const minutes = Math.round((hours - hoursInt) * 60)
+  return `${hoursInt ? hoursInt + 'ч ' : ''}${minutes ? minutes + 'мин' : ''}`
 }
