@@ -12,7 +12,7 @@ interface IWatchResourceProps {
 export const WatchResource: React.FC<IWatchResourceProps> = ({ resource, className }) => {
   return (
     <>
-      <a href={resource?.url} target="_blanc">
+      <a href={resource?.url} target="_blanc" className={className}>
         <Flex align="center" css={css`
           padding: 8px;
           border-radius: 8px;

@@ -3,17 +3,12 @@ import { useContainerWidth } from "src/shared/lib";
 import { css } from "@emotion/react";
 import MainImage from '../assets/main-image.png'
 import { useLazyGetMoviesQuery } from "src/shared/api";
-import { test } from './test'
 import { MovieCardsList } from "./MovieCardsList";
 
 const { Title } = Typography
 const { Search } = Input;
 const { useBreakpoint } = Grid
 
-const test1 = css`
-  width: 20px;
-  height:30px;
-`
 
 export const HomePage: React.FC = () => {
   const { width } = useContainerWidth()

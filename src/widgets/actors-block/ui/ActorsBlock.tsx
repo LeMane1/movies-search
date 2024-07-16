@@ -1,4 +1,4 @@
-import { Typography, Flex, Space } from "antd";
+import { Typography, Flex } from "antd";
 import type { Person } from "src/shared/models"
 import { PersonCard } from "src/entities/person-card";
 import { css } from "@emotion/react";

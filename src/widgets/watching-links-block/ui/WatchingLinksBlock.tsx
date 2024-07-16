@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import { Typography, Flex, Col, Row } from "antd"
+import { Typography, Col, Row } from "antd"
 import { WatchResource } from "src/entities/watch-resource";
 import { Item } from "src/shared/models"
 

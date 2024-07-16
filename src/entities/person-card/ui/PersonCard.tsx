@@ -1,6 +1,6 @@
 import type { Person } from "src/shared/models"
 import { css } from "@emotion/react";
-import { Typography, Flex, Card } from "antd";
+import { Typography, Flex } from "antd";
 
 const { Title } = Typography
 
