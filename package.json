@@ -1,5 +1,4 @@
 {
-  "homepage": "https://lemane1.github.io/movies-search/",
   "name": "movies-app",
   "private": true,
   "version": "0.0.0",
@@ -18,7 +17,6 @@
     "@emotion/styled": "^11.11.5",
     "@reduxjs/toolkit": "^2.2.5",
     "antd": "^5.18.3",
-    "gh-pages": "^6.1.1",
     "lottie-react": "^2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -35,6 +33,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.1.1",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }
