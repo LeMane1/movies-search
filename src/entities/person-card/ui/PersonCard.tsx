@@ -25,10 +25,11 @@ export const PersonCard: React.FC<IPersonCardProps> = ({
         `}
       >
         <img
+          loading="lazy"
           src={person?.photo}
           css={css`
             width: 120px;
-            height: 170px;
+            height: 190px;
             border-radius: 8px;
             margin-bottom: 8px;
         `} />

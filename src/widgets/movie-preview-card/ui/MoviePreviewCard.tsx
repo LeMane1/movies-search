@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import type { IPreviewMovie } from 'src/shared/models';
-import { Flex, Typography } from 'antd';
+import { Flex, Typography, Skeleton } from 'antd';
 import { GenresList } from './GenresList';
 import { KpRating } from 'src/entities/kp-rating';
 import { MoviePosterImage } from './MoviePosterImage';
@@ -41,7 +41,7 @@ export const MoviePreviewCard: React.FC<IMoviePreviewCardProps> = ({
       className={className}
       onClick={() => navigate(`/movies-search/about/${movieInfo.id}`)}
       css={cardButtonStyle}>
-      <Flex>
+      {movieInfo && <Flex>
         <MoviePosterImage
           imageUrl={movieInfo?.poster?.previewUrl}
           showIncreasedImage={showIncreasedCard}
@@ -94,7 +94,9 @@ export const MoviePreviewCard: React.FC<IMoviePreviewCardProps> = ({
             {movieInfo.shortDescription}
           </Text>
         </div>
-      </Flex>
+      </Flex>}
+
+      {!movieInfo && <Skeleton active />}
     </button>
   )
 }

@@ -36,7 +36,9 @@ export const WatchingLinksBlock: React.FC<WatchingLinksBlockProps> = ({
             <WatchResource key={resource.name} resource={resource} />
           </Col>
 
-        )) : <p>{'Тайтл нигде не доступен;('}</p>}
+        )) : <p css={css`
+          margin-left: 4px;
+        `}>{'Тайтл нигде не доступен'}</p>}
       </Row>
       {/* </Flex> */}
     </div>

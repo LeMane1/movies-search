@@ -14,7 +14,7 @@ export const Backdrop: React.FC<IBackdropProps> = ({
   children,
   className
 }) => {
-  const { md } = useBreakpoint()
+  const { md, xxl } = useBreakpoint()
   return (
     <div
       className={className}
@@ -44,8 +44,10 @@ export const Backdrop: React.FC<IBackdropProps> = ({
         <img
           src={image ?? ''}
           css={css`
-          width: 100%;
-          height: fit-content;
+            width: 100vw;
+            height: ${xxl ? '60vh' : 'fit-content'};
+            object-fit: cover;
+            aspect-ratio: 16 / 9;
       `} />
       </div>
       {children}
