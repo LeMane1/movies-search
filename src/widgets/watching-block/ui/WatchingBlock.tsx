@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import { Typography, Col, Row, Flex, Space } from "antd"
+import { Typography, Col, Row, Flex } from "antd"
 import { WatchResource } from "src/entities/watch-resource";
 import { Item } from "src/shared/models"
 import { VideoPlayer } from "./VideoPlayer";

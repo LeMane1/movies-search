@@ -17,7 +17,7 @@ const { Title } = Typography
 
 export const MoviePage: React.FC = () => {
   const { titleId } = useParams();
-  const [refetch, { data, isLoading, isFetching, isSuccess }] = useLazyGetMovieByTitleIdQuery()
+  const [refetch, { data, isLoading, isSuccess }] = useLazyGetMovieByTitleIdQuery()
   const { width } = useContainerWidth()
   const { md } = useBreakpoint()
 
