@@ -39,7 +39,7 @@ export const MoviePreviewCard: React.FC<IMoviePreviewCardProps> = ({
   return (
     <button
       className={className}
-      onClick={() => navigate(`/movies-search/about/${movieInfo.id}`)}
+      onClick={() => navigate(`/movies-search/movie/${movieInfo.id}`)}
       css={cardButtonStyle}>
       {movieInfo && <Flex>
         <MoviePosterImage

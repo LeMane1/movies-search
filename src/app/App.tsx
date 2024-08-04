@@ -14,7 +14,7 @@ export const App: React.FC = () => {
       >
         <Routes>
           <Route path={'/movies-search'} element={<HomePage />} />
-          <Route path={'/movies-search/about/:titleId'} element={<MoviePage />} />
+          <Route path={'/movies-search/movie/:titleId'} element={<MoviePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ConfigProvider>

@@ -8,7 +8,7 @@ import { Backdrop } from './Backdrop';
 import { Header } from 'src/widgets/header';
 import { MovieIntroInfo } from 'src/widgets/movie-intro-info';
 import { MovieDescription } from './MovieDescription';
-import { WatchingLinksBlock } from 'src/widgets/watching-links-block';
+import { WatchingBlock } from 'src/widgets/watching-block';
 import { ActorsBlock } from 'src/widgets/actors-block';
 import { getActors } from '../lib/getActors';
 
@@ -71,11 +71,14 @@ export const MoviePage: React.FC = () => {
                 display: block;
             `} />
 
-              <WatchingLinksBlock
+              <WatchingBlock
+                movieName={data?.name}
+                year={data?.year}
+                kpId={data?.id}
                 watchResources={data?.watchability?.items}
                 css={css`
-              width: 100%;
-          `} />
+                  width: 100%;
+              `} />
 
               <ActorsBlock actors={getActors(data?.persons)} />
             </Space>

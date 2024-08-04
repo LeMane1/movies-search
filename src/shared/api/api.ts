@@ -1,13 +1,15 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { IMoviesSearchResponse, IMovie } from '../models/types'
 
+const kinopoiskApiKey = import.meta.env.VITE_KINOPOISK_API_KEY
+
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.kinopoisk.dev',
     prepareHeaders: (headers) => {
       headers.set('accept', 'application/json')
-      headers.set('X-API-KEY', 'E4M5NTH-CCY4APJ-GEF0VNT-FH3ZJWX')
+      headers.set('X-API-KEY', kinopoiskApiKey)
       return headers
     },
   }),
