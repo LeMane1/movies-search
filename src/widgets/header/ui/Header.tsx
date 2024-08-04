@@ -1,6 +1,6 @@
 import { css } from "@emotion/react"
 import { useContainerWidth } from "src/shared/lib"
-import { Typography, Flex, Grid } from "antd"
+import { Typography, Grid } from "antd"
 import Lottie from "lottie-react";
 import cameraLottie from '../assets/camera-lottie.json'
 import { APP_NAME } from "src/shared/models";
