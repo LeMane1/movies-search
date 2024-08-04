@@ -4,6 +4,8 @@ import { css } from "@emotion/react";
 import MainImage from '../assets/main-image.png'
 import { useLazyGetMoviesQuery } from "src/shared/api";
 import { MovieCardsList } from "./MovieCardsList";
+import { useEffect } from "react";
+import { APP_NAME } from "src/shared/models";
 
 const { Title } = Typography
 const { Search } = Input;
@@ -14,6 +16,12 @@ export const HomePage: React.FC = () => {
   const { width } = useContainerWidth()
   const [refetch, { data, isLoading }] = useLazyGetMoviesQuery()
   const { sm, lg } = useBreakpoint()
+
+  useEffect(() => {
+    if (document.title !== APP_NAME) {
+      document.title = APP_NAME
+    }
+  }, [])
 
   return (
     <div css={css`

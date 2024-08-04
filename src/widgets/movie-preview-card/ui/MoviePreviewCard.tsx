@@ -33,7 +33,6 @@ export const MoviePreviewCard: React.FC<IMoviePreviewCardProps> = ({
   movieInfo,
   showIncreasedCard = true
 }) => {
-
   const navigate = useNavigate();
 
   return (

@@ -9,6 +9,7 @@ import { DurationTime } from './DurationTime';
 import { Country, Genre } from "src/shared/models/types";
 import { CountryList } from "./CountryList";
 import { KpRating } from "src/entities/kp-rating";
+import { WatchButton } from "src/features/watch-button";
 
 const { useBreakpoint } = Grid
 const { Title } = Typography
@@ -111,7 +112,11 @@ export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
             <CountryList countries={countries} />
           </Space>
 
-          <GenresList genres={genres} />
+          <GenresList genres={genres} css={css`
+            margin-bottom: 16px;
+          `} />
+
+          <WatchButton />
         </Flex>
       </div>
     </Box>

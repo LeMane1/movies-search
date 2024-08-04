@@ -7,3 +7,4 @@ export type {
   Item,
   Person
 } from './types'
+export { APP_NAME } from './constants'

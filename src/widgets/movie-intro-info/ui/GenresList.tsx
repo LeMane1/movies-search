@@ -5,13 +5,15 @@ import type { Genre } from 'src/shared/models/types'
 
 interface IGenresListProps {
   genres?: Genre[] | null;
+  className?: string;
 }
 
-export const GenresList: React.FC<IGenresListProps> = ({ genres }) => {
+export const GenresList: React.FC<IGenresListProps> = ({ genres, className }) => {
   return (
     <>
       <Space
         wrap
+        className={className}
         css={css`
           width: 100%;
       `}>

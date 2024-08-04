@@ -27,8 +27,11 @@ export const WatchingBlock: React.FC<WatchingLinksBlockProps> = ({
     >
 
       <Flex vertical>
-        <Title level={3} css={css`
-          margin-bottom: 12px !important;
+        <Title
+          id="videoPlayerTitle"
+          level={3}
+          css={css`
+            margin-bottom: 12px !important;
         `}>
           Cмотреть онлайн
         </Title>

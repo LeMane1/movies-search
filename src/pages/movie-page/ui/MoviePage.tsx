@@ -11,6 +11,7 @@ import { MovieDescription } from './MovieDescription';
 import { WatchingBlock } from 'src/widgets/watching-block';
 import { ActorsBlock } from 'src/widgets/actors-block';
 import { getActors } from '../lib/getActors';
+import { APP_NAME } from 'src/shared/models';
 
 const { useBreakpoint } = Grid
 const { Title } = Typography
@@ -24,6 +25,7 @@ export const MoviePage: React.FC = () => {
   useEffect(() => {
     if (titleId) {
       refetch(Number(titleId))
+      document.title = data?.name ? `${data?.name} / ${APP_NAME}` : `${APP_NAME}`;
     }
   }, [titleId])
 
@@ -103,7 +105,6 @@ export const MoviePage: React.FC = () => {
         `} />
         <Title level={5}>Загружаем данные о тайтле</Title>
       </Flex>}
-      { }
     </>
   )
 };
