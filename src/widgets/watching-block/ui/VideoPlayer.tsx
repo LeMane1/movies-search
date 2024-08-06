@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react"
 import { css } from "@emotion/react"
-import { Grid } from "antd";
-
-const { useBreakpoint } = Grid
 
 const regExp = /<iframe.*>.*<\/iframe>/g
 
@@ -17,7 +14,6 @@ export const VideoPlayer: React.FC<IVideoPlayerProps> = ({
   name, year, kpId, className
 }) => {
   const [scriptHtml, setScriptHtml] = useState('')
-  const { xs } = useBreakpoint()
 
   useEffect(() => {
     if (name && year && kpId) {
