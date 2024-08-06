@@ -41,8 +41,9 @@ export const VideoPlayer: React.FC<IVideoPlayerProps> = ({
         id="uitools"
         dangerouslySetInnerHTML={{ __html: scriptHtml }}
         css={css`
-          height: 370px;
-          width: ${xs ? '100%' : '610px'};
+          height: fit-content;
+          width: 100%;
+          aspect-ratio: 16 / 9;
           background-image: url('//pleer.videoplayers.club/web/img/loader.gif');
           background-repeat: no-repeat;
           background-position: center;
