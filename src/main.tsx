@@ -9,10 +9,10 @@ const store = setupStore()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename='/movies-search'>
+    <BrowserRouter basename='/movies-search/'>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
