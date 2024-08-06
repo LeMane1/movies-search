@@ -25,9 +25,14 @@ export const MoviePage: React.FC = () => {
   useEffect(() => {
     if (titleId) {
       refetch(Number(titleId))
-      document.title = data?.name ? `${data?.name} / ${APP_NAME}` : `${APP_NAME}`;
     }
   }, [titleId])
+
+  useEffect(() => {
+    if (data?.name) {
+      document.title = data?.name ? `${data?.name} / ${APP_NAME}` : `${APP_NAME}`;
+    }
+  }, [data?.name])
 
   return (
     <>

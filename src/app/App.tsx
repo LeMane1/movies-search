@@ -13,8 +13,8 @@ export const App: React.FC = () => {
         theme={themeData}
       >
         <Routes>
-          <Route path={'/movies-search'} element={<HomePage />} />
-          <Route path={'/movies-search/movie/:titleId'} element={<MoviePage />} />
+          <Route path={'/'} element={<HomePage />} />
+          <Route path={'/movie/:titleId'} element={<MoviePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ConfigProvider>
