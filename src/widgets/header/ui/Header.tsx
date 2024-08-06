@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
       `}>
         <button
           onClick={() => {
-            navigate('/movies-search')
+            navigate('/')
           }}
           css={css`
             display: flex;
