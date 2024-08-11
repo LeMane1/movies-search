@@ -13,6 +13,8 @@ import { ActorsBlock } from 'src/widgets/actors-block';
 import { getActors } from '../lib/getActors';
 import { APP_NAME } from 'src/shared/models';
 import { Footer } from 'src/widgets/footer';
+import { SimilarTitles } from 'src/widgets/similar-titles';
+// import { SequelsAndPrequels } from 'src/widgets/sequels-and-prequels';
 
 const { useBreakpoint } = Grid
 const { Title } = Typography
@@ -90,6 +92,10 @@ export const MoviePage: React.FC = () => {
               `} />
 
               <ActorsBlock actors={getActors(data?.persons)} />
+
+              {/* <SequelsAndPrequels /> */}
+
+              <SimilarTitles titles={data?.similarMovies} />
             </Space>
 
             <Footer />

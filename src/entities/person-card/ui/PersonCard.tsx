@@ -28,10 +28,11 @@ export const PersonCard: React.FC<IPersonCardProps> = ({
           loading="lazy"
           src={person?.photo}
           css={css`
-            width: 120px;
-            height: 190px;
+            width: 100px;
+            height: 150px;
             border-radius: 8px;
             margin-bottom: 8px;
+            object-fit: cover;
         `} />
         <Title css={css`
           font-size: 14px !important;

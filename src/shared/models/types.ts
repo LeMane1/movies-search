@@ -41,6 +41,8 @@ export interface IMovie {
   persons: Person[]
   budget: Budget
   premiere: Premiere
+  similarMovies: SimilarMovie[] | null
+  sequelsAndPrequels: SimilarMovie[] | null,
   watchability: Watchability
   top10: any
   top250: number
@@ -51,6 +53,17 @@ export interface IMovie {
   networks: any
   createdAt: string
   updatedAt: string
+}
+
+export interface SimilarMovie {
+  id: number,
+  name: string,
+  enName: string,
+  alternativeName: string,
+  type: string,
+  poster: Poster,
+  rating: Rating,
+  year: number
 }
 
 export interface Premiere {

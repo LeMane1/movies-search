@@ -14,7 +14,7 @@ const { useBreakpoint } = Grid
 
 export const HomePage: React.FC = () => {
   const [refetch, { data, isLoading }] = useLazyGetMoviesQuery()
-  const { sm, lg, md } = useBreakpoint()
+  const { sm, md } = useBreakpoint()
 
   useEffect(() => {
     if (document.title !== APP_NAME) {

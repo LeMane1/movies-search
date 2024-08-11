@@ -5,6 +5,7 @@ export type {
   Breakpoints,
   Watchability,
   Item,
-  Person
+  Person,
+  SimilarMovie
 } from './types'
 export { APP_NAME } from './constants'
