@@ -21,7 +21,7 @@ const { Title } = Typography
 
 export const MoviePage: React.FC = () => {
   const { titleId } = useParams();
-  const [refetch, { data, isLoading, isSuccess }] = useLazyGetMovieByTitleIdQuery()
+  const [refetch, { data, isLoading, isSuccess, isFetching }] = useLazyGetMovieByTitleIdQuery()
   const { width } = useContainerWidth()
   const { md } = useBreakpoint()
 
@@ -39,7 +39,7 @@ export const MoviePage: React.FC = () => {
 
   return (
     <>
-      {isSuccess && <div css={css`
+      {isSuccess && !(isLoading || isFetching) && <div css={css`
         position: relative;
       `}>
         <Header />
@@ -103,7 +103,7 @@ export const MoviePage: React.FC = () => {
         </div>
       </div>}
 
-      {isLoading && <Flex
+      {(isLoading || isFetching) && <Flex
         vertical
         align='center'
         justify='center'

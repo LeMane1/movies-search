@@ -30,13 +30,19 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
         position: relative;
         transition: all .1s ease-in-out;
         &:hover{
-          transform: scale(1.1, 1.1);
+          transform: scale(1.15, 1.15);
           transition: all .2s ease-in-out;
           cursor: pointer;
+
+          box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+
+          z-index: 100;
         }
+
         &:hover > #description{
           opacity: 1;
           transition: all .3s ease-in-out;
+          padding-bottom: 12px;
         }
     `}>
       <img
@@ -58,7 +64,9 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
           opacity: 0;
           position: absolute;
           bottom: 0;
-          padding: 8px !important;
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-bottom: 8px;
           width: 100%;
           height: 100%;
           background: linear-gradient(0deg, rgba(0,0,0,1) 24%, rgba(65,64,27,0) 77%);
