@@ -12,6 +12,7 @@ import { WatchingBlock } from 'src/widgets/watching-block';
 import { ActorsBlock } from 'src/widgets/actors-block';
 import { getActors } from '../lib/getActors';
 import { APP_NAME } from 'src/shared/models';
+import { Footer } from 'src/widgets/footer';
 
 const { useBreakpoint } = Grid
 const { Title } = Typography
@@ -57,20 +58,21 @@ export const MoviePage: React.FC = () => {
         </Backdrop>
 
         <div css={css`
-        width: 100%;
-        padding: 0 12px;
-      `}>
-          <div css={css`
-          width: ${width};
-          margin: 0 auto;
-          margin-bottom: 80px;
+          width: 100%;
+          padding: 0 12px;
         `}>
+          <div css={css`
+            width: ${width};
+            margin: 0 auto;
+            margin-bottom: 80px;
+          `}>
             <Space
               direction='vertical'
               size={32}
               css={css`
-              width: 100%;
-          `}>
+                width: 100%;
+                margin-bottom: 32px;
+            `}>
               <MovieDescription
                 descriptionText={data?.description}
                 css={css`
@@ -89,6 +91,8 @@ export const MoviePage: React.FC = () => {
 
               <ActorsBlock actors={getActors(data?.persons)} />
             </Space>
+
+            <Footer />
           </div>
         </div>
       </div>}

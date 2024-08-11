@@ -22,7 +22,7 @@ export const ActorsBlock: React.FC<IActorsBlockProps> = ({ actors }) => {
       <Flex
         align="flex-start"
         css={css`
-          overflow-y: scroll;
+          overflow-x: auto;
       `}>
         {actors && actors.length > 0 ? actors.map(actor => (
           <PersonCard person={actor} css={css`
