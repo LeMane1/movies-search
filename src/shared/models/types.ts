@@ -53,6 +53,7 @@ export interface IMovie {
   networks: any
   createdAt: string
   updatedAt: string
+  logo: Logo
 }
 
 export interface SimilarMovie {

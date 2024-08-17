@@ -30,7 +30,7 @@ export const PersonCard: React.FC<IPersonCardProps> = ({
           css={css`
             width: 100px;
             height: 150px;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 8px;
             object-fit: cover;
         `} />

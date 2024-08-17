@@ -25,7 +25,7 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
         border: none;
         padding: 0;
         background: none;
-        border-radius: 8px;
+        border-radius: 10px;
         overflow: hidden;
         position: relative;
         transition: all .1s ease-in-out;
@@ -33,9 +33,7 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
           transform: scale(1.15, 1.15);
           transition: all .2s ease-in-out;
           cursor: pointer;
-
           box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
-
           z-index: 100;
         }
 
@@ -97,8 +95,8 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
         top: 8px;
         right: 8px;
         backdrop-filter: blur(10px);
-        background-color: rgba(92, 92, 92, 0.3);
-        border-radius: 4px;
+        background-color: rgba(92, 92, 92, 0.5);
+        border-radius: 12px;
         padding: 4px 8px;
       `}>
         <KpRating ratingValue={movie?.rating?.kp} />

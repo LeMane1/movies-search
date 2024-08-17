@@ -20,7 +20,7 @@ export const SimilarTitles: React.FC<ISimilarTitlesProps> = ({
         css={css`
             margin-bottom: 12px !important;
         `}>
-        Похожее
+        Из этой тематики
       </Title>
 
       <Row gutter={[16, 16]} css={css`

@@ -6,6 +6,7 @@ export type {
   Watchability,
   Item,
   Person,
-  SimilarMovie
+  SimilarMovie,
+  Genre
 } from './types'
 export { APP_NAME } from './constants'

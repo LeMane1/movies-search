@@ -10,6 +10,7 @@ import { Country, Genre } from "src/shared/models/types";
 import { CountryList } from "./CountryList";
 import { KpRating } from "src/entities/kp-rating";
 import { WatchButton } from "src/features/watch-button";
+import { MovieLogo } from "./MovieLogo";
 
 const { useBreakpoint } = Grid
 const { Title } = Typography
@@ -35,6 +36,7 @@ interface IMovieIntroInfoProps {
   genres?: Genre[];
   countries?: Country[];
   ratingValue?: number;
+  logo?: { url?: string } | null;
 }
 
 export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
@@ -46,7 +48,8 @@ export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
   ageRating,
   genres,
   countries,
-  ratingValue
+  ratingValue,
+  logo
 }) => {
 
   const { breakpoint, width } = useContainerWidth()
@@ -69,7 +72,11 @@ export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
             height: 100%;
             width: ${md ? '50%' : '100%'};
         `}>
-          <MovieName name={movieName} breakpoint={breakpoint} />
+          {
+            logo ? <MovieLogo url={logo?.url} />
+              :
+              <MovieName name={movieName} breakpoint={breakpoint} />
+          }
 
           <Title
             level={5}

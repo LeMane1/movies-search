@@ -1,4 +1,4 @@
-import { Input, Typography, Flex, Empty, Grid } from "antd";
+import { Input, Typography, Flex, Empty, Grid, Spin } from "antd";
 import { css } from "@emotion/react";
 import MainImage from '../assets/main-image.png'
 import { useLazyGetMoviesQuery } from "src/shared/api";
@@ -13,7 +13,7 @@ const { useBreakpoint } = Grid
 
 
 export const HomePage: React.FC = () => {
-  const [refetch, { data, isLoading }] = useLazyGetMoviesQuery()
+  const [refetch, { data, isLoading, isFetching }] = useLazyGetMoviesQuery()
   const { sm, md } = useBreakpoint()
 
   useEffect(() => {
@@ -63,19 +63,22 @@ export const HomePage: React.FC = () => {
           `}
         />
 
-        {data && data?.docs ?
-          <MovieCardsList
-            moviesList={data?.docs}
-            showIncreasedCards={sm}
-          /> :
-          <Empty
-            description={
-              <Typography.Text css={css`
-                opacity: 50%;
-              `}>
-                Фильмов по запросу нет
-              </Typography.Text>
-            } />}
+        {(isLoading || isFetching) ?
+          <Spin size="large" />
+          :
+          data && data?.docs && data?.docs?.length > 0 ?
+            <MovieCardsList
+              moviesList={data?.docs}
+              showIncreasedCards={sm}
+            /> :
+            <Empty
+              description={
+                <Typography.Text css={css`
+                  opacity: 50%;
+                `}>
+                  Фильмов по запросу нет
+                </Typography.Text>
+              } />}
       </Flex >
 
       <Footer />

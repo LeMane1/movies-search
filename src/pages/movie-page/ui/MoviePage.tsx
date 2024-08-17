@@ -14,7 +14,8 @@ import { getActors } from '../lib/getActors';
 import { APP_NAME } from 'src/shared/models';
 import { Footer } from 'src/widgets/footer';
 import { SimilarTitles } from 'src/widgets/similar-titles';
-// import { SequelsAndPrequels } from 'src/widgets/sequels-and-prequels';
+import { SequelsAndPrequels } from 'src/widgets/sequels-and-prequels';
+import { MovieParameters } from 'src/widgets/movie-parameters';
 
 const { useBreakpoint } = Grid
 const { Title } = Typography
@@ -56,6 +57,7 @@ export const MoviePage: React.FC = () => {
             genres={data?.genres}
             countries={data?.countries}
             ratingValue={data?.rating?.kp}
+            logo={data?.logo}
           />
         </Backdrop>
 
@@ -78,9 +80,15 @@ export const MoviePage: React.FC = () => {
               <MovieDescription
                 descriptionText={data?.description}
                 css={css`
-                width: ${md ? '80%' : '100%'};
-                display: block;
-            `} />
+                  width: ${md ? '80%' : '100%'};
+                  display: block;
+              `} />
+
+              <MovieParameters
+                year={data?.year}
+                slogan={data?.slogan}
+                genres={data?.genres}
+              />
 
               <WatchingBlock
                 movieName={data?.name}
@@ -93,11 +101,20 @@ export const MoviePage: React.FC = () => {
 
               <ActorsBlock actors={getActors(data?.persons)} />
 
-              {/* <SequelsAndPrequels /> */}
+              {
+                data &&
+                data?.sequelsAndPrequels &&
+                data?.sequelsAndPrequels.length > 0 &&
+                <SequelsAndPrequels titles={data?.sequelsAndPrequels} />
+              }
 
-              <SimilarTitles titles={data?.similarMovies} />
+              {
+                data &&
+                data?.similarMovies &&
+                data?.similarMovies?.length > 0 &&
+                < SimilarTitles titles={data?.similarMovies} />
+              }
             </Space>
-
             <Footer />
           </div>
         </div>
