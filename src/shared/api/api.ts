@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { IMoviesSearchResponse, IMovie } from '../models/types'
 
+//const kinopoiskApiKey = 'E4M5NTH-CCY4APJ-GEF0VNT-FH3ZJWX'
 const kinopoiskApiKey = import.meta.env.VITE_KINOPOISK_API_KEY
 
 export const api = createApi({

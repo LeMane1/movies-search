@@ -28,9 +28,9 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
         border-radius: 10px;
         overflow: hidden;
         position: relative;
-        transition: all .1s ease-in-out;
+        transition: all .2s ease-in-out;
         &:hover{
-          transform: scale(1.15, 1.15);
+          transform: scale(1.05, 1.05);
           transition: all .2s ease-in-out;
           cursor: pointer;
           box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
