@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import MainImage from '../assets/main-image.png'
 import { useLazyGetMoviesQuery } from "src/shared/api";
 import { MovieCardsList } from "./MovieCardsList";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { APP_NAME } from "src/shared/models";
 import { Footer } from "src/widgets/footer";
 
@@ -11,10 +11,24 @@ const { Title } = Typography
 const { Search } = Input;
 const { useBreakpoint } = Grid
 
+const debounce = (callback: (value: string) => void) => {
+  let timer = 0
+
+  return function(value: string){
+    if (timer){
+      clearTimeout(timer)
+    }
+
+    timer = setTimeout(() => {
+      if (value) callback(value)
+    }, 2000)
+  }
+}
 
 export const HomePage: React.FC = () => {
   const [refetch, { data, isLoading, isFetching }] = useLazyGetMoviesQuery()
   const { sm, md } = useBreakpoint()
+  const getDebouncedMovies = useCallback(debounce((value) => refetch(value)), [refetch]);
 
   useEffect(() => {
     if (document.title !== APP_NAME) {
@@ -57,6 +71,7 @@ export const HomePage: React.FC = () => {
         <Search
           size="large"
           onSearch={(value) => refetch(value)}
+          onChange={(value: React.ChangeEvent<HTMLInputElement>) => getDebouncedMovies(value.currentTarget.value)}
           loading={isLoading}
           css={css`
             margin-bottom: 24px;
