@@ -20,7 +20,7 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
       className={className}
       css={css`
         display: block;
-        width: 200px;
+        width: 186px;
         height: 280px;
         border: none;
         padding: 0;
@@ -28,13 +28,14 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie, className }) => {
         border-radius: 10px;
         overflow: hidden;
         position: relative;
+        opacity: .8;
         transition: all .2s ease-in-out;
         &:hover{
-          transform: scale(1.05, 1.05);
+          transform: scale(1.05);
           transition: all .2s ease-in-out;
           cursor: pointer;
-          box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
           z-index: 100;
+          opacity: 1;
         }
 
         &:hover > #description{

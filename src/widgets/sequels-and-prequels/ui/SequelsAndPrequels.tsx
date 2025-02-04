@@ -1,4 +1,4 @@
-import { Typography, Row, Col } from "antd"
+import { Typography, Flex } from "antd"
 import { css } from "@emotion/react"
 import { SimilarMovie } from "src/shared/models"
 import { MovieCard } from "src/entities/movie-card"
@@ -22,17 +22,20 @@ export const SequelsAndPrequels: React.FC<ISequelsAndPrequelsProps> = ({
         Сиквелы и приквелы
       </Title>
 
-      <Row gutter={[16, 16]} css={css`
-        width: 100%;
+      <Flex
+        align="flex-start"
+        css={css`
+          overflow-x: auto;
+          scrollbar-width: none;
+          padding: 8px 0px;
       `}>
-        {titles && titles?.length > 0 && titles.map(title => (
-          <Col xs={24} sm={12} md={8} lg={6} xl={6} xxl={6}>
-            <MovieCard key={title.id} movie={title} css={css`
-              margin: 0 auto;
-            `} />
-          </Col>
-        ))}
-      </Row>
+        {titles && titles.length > 0 ? titles.map(title => (
+          <MovieCard key={title.id} movie={title} css={css`
+            flex-shrink: 0;
+            margin-right: 24px;
+          `} />
+        )) : <p>Нет актеров</p>}
+      </Flex>
     </>
   )
 }

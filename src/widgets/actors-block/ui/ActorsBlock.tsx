@@ -61,7 +61,7 @@ export const ActorsBlock: React.FC<IActorsBlockProps> = ({ actors }) => {
         css={css`
           position: absolute;
           left: ${xs ? '-10px' : '-20px'};
-          top: 45%;
+          top: 44%;
           z-index: 1000;
         `}
         onClick={() => scroll("left")}
@@ -74,7 +74,7 @@ export const ActorsBlock: React.FC<IActorsBlockProps> = ({ actors }) => {
         css={css`
           position: absolute;
           right: ${xs ? '-10px' : '-20px'};
-          top: 45%;
+          top: 44%;
           z-index: 1000;
         `}
         onClick={() => scroll("right")}

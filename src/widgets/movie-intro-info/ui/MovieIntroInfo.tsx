@@ -65,7 +65,7 @@ export const MovieIntroInfo: React.FC<IMovieIntroInfoProps> = ({
       `}>
         <Flex
           vertical
-          wrap
+          wrap={false}
           justify='center'
           css={css`
             margin-top: -40px;

@@ -1,3 +1,5 @@
+import { css } from "@emotion/react";
+
 interface IMovieLogo {
   url?: string | null;
 }
@@ -5,7 +7,10 @@ interface IMovieLogo {
 export const MovieLogo: React.FC<IMovieLogo> = ({ url }) => {
   return (
     <>
-      {url && <img src={url} width='fit-content' height='fit-content' />}
+      {url && <img src={url} css={css`
+        width: fit-content;
+        height: fit-content;
+      `} />}
     </>
   )
 }
