@@ -70,7 +70,7 @@ export const HomePage: React.FC = () => {
 
         <Search
           size="large"
-          onSearch={(value) => refetch(value)}
+          onSearch={(value) => getDebouncedMovies(value)}
           onChange={(value: React.ChangeEvent<HTMLInputElement>) => getDebouncedMovies(value.currentTarget.value)}
           loading={isLoading}
           css={css`

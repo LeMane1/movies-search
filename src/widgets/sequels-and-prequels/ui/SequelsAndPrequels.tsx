@@ -1,7 +1,8 @@
-import { Typography, Flex } from "antd"
+import { Typography } from "antd"
 import { css } from "@emotion/react"
 import { SimilarMovie } from "src/shared/models"
 import { MovieCard } from "src/entities/movie-card"
+import { CollectionsCarousel } from "src/widgets/collections-carousel"
 
 const { Title } = Typography
 
@@ -13,7 +14,7 @@ export const SequelsAndPrequels: React.FC<ISequelsAndPrequelsProps> = ({
   titles
 }) => {
   return (
-    <>
+    <div id="sequels-and-prequels-titles-block">
       <Title
         level={3}
         css={css`
@@ -22,20 +23,22 @@ export const SequelsAndPrequels: React.FC<ISequelsAndPrequelsProps> = ({
         Сиквелы и приквелы
       </Title>
 
-      <Flex
-        align="flex-start"
-        css={css`
-          overflow-x: auto;
-          scrollbar-width: none;
-          padding: 8px 0px;
-      `}>
+      <CollectionsCarousel
+        wrapperId="sequels-and-prequels-titles-block"
+        paddingVertical={8}
+        paddingHorizontal={0}
+        cardWidth={210}
+      >
         {titles && titles.length > 0 ? titles.map(title => (
-          <MovieCard key={title.id} movie={title} css={css`
-            flex-shrink: 0;
-            margin-right: 24px;
+          <MovieCard
+            key={title.id}
+            movie={title}
+            css={css`
+              flex-shrink: 0;
+              margin-right: 24px;
           `} />
         )) : <p>Нет актеров</p>}
-      </Flex>
-    </>
+      </CollectionsCarousel>
+    </div>
   )
 }
